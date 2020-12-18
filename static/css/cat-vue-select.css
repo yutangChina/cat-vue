@@ -1,0 +1,15 @@
+.cat-vue-select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding-left: 15px;
+    width: 240px;
+    height: 40px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+}
+.cat-vue-select-option{
+    
+}

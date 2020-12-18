@@ -1,0 +1,96 @@
+.cat-vue-tag {
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cat-vue-tag-big {
+    height: 48px;
+    line-height: 36px;
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 4px;
+}
+
+.cat-vue-tag-medium {
+    height: 32px;
+    line-height: 24px;
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.cat-vue-tag-small {
+    height: 16px;
+    line-height: 12px;
+    padding: 1px 10px;
+    font-size: 8px;
+    border-radius: 4px;
+}
+
+.cat-vue-tag-mini {
+    height: 12px;
+    line-height: 8px;
+    padding: 1px 10px;
+    font-size: 8px;
+    border-radius: 4px;
+}
+
+.cat-vue-tag-light-default {
+    border: 1px solid #b3d8ff;
+    color: #409eff;
+}
+
+.cat-vue-tag-light-success {
+    border: 1px solid #c2e7b0;
+    color: #67c23a;
+}
+
+.cat-vue-tag-light-info {
+    border: 1px solid #d3d4d6;
+    color: #909399;
+}
+
+.cat-vue-tag-light-warning {
+    border: 1px solid #f5dab1;
+    color: #e6a23c;
+}
+
+.cat-vue-tag-light-danger {
+    border: 1px solid #fbc4c4;
+    color: #f56c6c;
+}
+
+
+
+
+
+.cat-vue-tag-dark-default {
+    border: 1px solid #409eff;
+    background-color: #409eff;
+    color: #ffffff;
+}
+
+.cat-vue-tag-dark-success {
+    border: 1px solid #67c23a;
+    background-color: #67c23a;
+    color: #ffffff;
+}
+
+.cat-vue-tag-dark-info {
+    border: 1px solid #909399;
+    background-color: #909399;
+    color: #ffffff;
+}
+
+.cat-vue-tag-dark-warning {
+    border: 1px solid #e6a23c;
+    background-color: #e6a23c;
+    color: #ffffff;
+}
+
+.cat-vue-tag-dark-danger {
+    border: 1px solid #f56c6c;
+    background-color: #f56c6c;
+    color: #ffffff;
+}

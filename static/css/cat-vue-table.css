@@ -1,0 +1,26 @@
+.cat-vue-table {
+    width: 100%;
+    border: 1px solid #eee;
+    border-collapse: collapse;
+}
+
+.cat-vue-table-thead .cat-vue-table-tr{
+    height: 48px;
+    background: #f5f7fa;
+}
+
+.cat-vue-table-thead .cat-vue-table-tr .cat-vue-table-th{
+    border: 1px solid #eee;
+    text-align: left;
+    padding-left: 8px;
+    color: #909399;
+    font-size: 16px;
+}
+
+.cat-vue-table-td{
+    border: 1px solid #eee;
+    text-align: left;
+    padding-left: 8px;
+    line-height: 32px;
+}
+

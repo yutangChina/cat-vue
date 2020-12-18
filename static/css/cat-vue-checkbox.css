@@ -1,0 +1,109 @@
+.cat-vue-checkbox-group {
+    display: inline-block;
+}
+
+.cat-vue-checkbox-item {
+    display: inline-block;
+    padding: 6px 12px;
+    height: 24px;
+}
+
+.cat-vue-checkbox-inputcontiner {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 24px;
+    width: 24px;
+    float: left;
+}
+
+.cat-vue-checkbox-input {
+    visibility: hidden;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    margin: 0px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cat-vue-checkbox-input::after {
+    content: " ";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #dcdfe6;
+    visibility: visible;
+    box-sizing: border-box;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.cat-vue-checkbox-input:checked::after {
+    content: " ";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-color: #409eff;
+    background: #409eff;
+    visibility: visible;
+    box-sizing: border-box;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.cat-vue-checkbox-input:checked::before {
+    content: " ";
+    display: inline-block;
+    visibility: visible;
+    box-sizing: border-box;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    width: 4px;
+    height: 10px;
+    z-index: 1;
+    transform: rotate(45deg) scaleY(1);
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.cat-vue-checkbox-label {
+    font-size: 16px;
+    padding-left: 8px;
+    margin-left:-4px;
+    color: #606266;
+    font-weight: 500;
+    line-height: 24px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    float: left;
+
+}
+
+.cat-vue-checkbox-item::after {
+    content: " ";
+    clear: both;
+}
+
+
+.cat-vue-checkbox-checked{
+    color: #409eff;
+    font-weight: 550;
+}
+.cat-vue-checkbox-labelDisabled{
+    color: #c0c4cc;
+    cursor: not-allowed;
+}
+.cat-vue-checkbox-input.cat-vue-checkbox-inputDisabled{
+    cursor: not-allowed;
+}
+.cat-vue-checkbox-input.cat-vue-checkbox-inputDisabled::after{
+    border-color:#c0c4cc;
+}
+.cat-vue-checkbox-input.cat-vue-checkbox-inputDisabled:checked::after{
+    background-color: #c0c4cc;
+}
