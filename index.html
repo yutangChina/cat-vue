@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="vue vue桌面端组件库 组件库">
+    <meta name="description" content="cat-vue，基于Vue的好用、灵活的桌面端组件库">
+    <title>cat-vue</title>
+    <script src="./static/js/vue.js"></script>
+    <script src="./static/js/cat-vue-main.js"></script>
+    <link rel="stylesheet" href="./static/guide/css/cat-vue-page-main.css" />
+    <script src="./static/guide/js/cat-vue-hor-nav.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="cat-vue-header" id="cat-vue-header">
+            <div style="width: 80%;margin: auto; border-bottom: 1px solid #eee;">
+                <div class="logo">CAT-VUE</div>
+                <cat-vue-ul :option="navLists" v-model="navValue" :ulclass="ulClass">
+                </cat-vue-ul>
+            </div>
+        </div>
+        <div class="cat-vue-body">   
+            <h1 class="h1">CAT-VUE</h1>
+            <h4 class="h4">基于Vue2.0的好用、灵活的桌面端组件库</h4>
+        </div>
+    </div>
+
+
+    <script>
+
+
+    </script>
+
+
+
+</body>
+
+</html>

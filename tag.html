@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat-vue-tag</title>
+    <script src="./static/js/vue.js"></script>
+    <script src="./static/js/cat-vue-tag.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-tag.css" />
+
+
+    <script src="./static/js/cat-vue-table.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-table.css" />
+    <link rel="stylesheet" href="./static/guide/css/cat-vue-page-main.css"/>
+
+    <style>
+        h2 {
+            border-top: 3px solid #3d7e9a;
+            padding-top: 16px;
+        }
+
+        .my-success {
+            color: red;
+            background-color: seagreen;
+        }
+        .my {
+            height: 36px;
+            display: inline-block;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>cat-vue-tag</h1>
+    <h2>标签实例：</h2>
+    <div id="app">
+        <div>
+            <h4>大标签</h4>
+            <cat-vue-tag size="big">默认</cat-vue-tag>
+            <cat-vue-tag type="light-success" size="big">成功</cat-vue-tag>
+            <cat-vue-tag type="light-info" size="big">信息</cat-vue-tag>
+            <cat-vue-tag type="light-warning" size="big">警告</cat-vue-tag>
+            <cat-vue-tag type="light-danger" size="big">危险</cat-vue-tag>
+            <cat-vue-tag type="dark-default" size="big">默认</cat-vue-tag>
+            <cat-vue-tag type="dark-success" size="big">成功</cat-vue-tag>
+            <cat-vue-tag type="dark-info" size="big">信息</cat-vue-tag>
+            <cat-vue-tag type="dark-warning" size="big">警告</cat-vue-tag>
+            <cat-vue-tag type="dark-danger" size="big">危险</cat-vue-tag>
+        </div>
+        <div>
+            <h4>中等标签（默认）</h4>
+            <cat-vue-tag>标签1</cat-vue-tag>
+            <cat-vue-tag type="light-success" size="medium">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-info" size="medium">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-warning" size="medium">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-danger" size="medium">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-default" size="medium">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-success" size="medium">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-info" size="medium">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-warning" size="medium">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-danger" size="medium">标签1</cat-vue-tag>
+        </div>
+        <div>
+            <h4>小标签</h4>
+            <cat-vue-tag size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-success" size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-info" size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-warning" size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-danger" size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-default" size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-success" size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-info" size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-warning" size="small">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-danger" size="small">标签1</cat-vue-tag>
+        </div>
+        <div>
+            <h4>极小标签</h4>
+            <cat-vue-tag size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-success" size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-info" size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-warning" size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="light-danger" size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-default" size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-success" size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-info" size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-warning" size="mini">标签1</cat-vue-tag>
+            <cat-vue-tag type="dark-danger" size="mini">标签1</cat-vue-tag>
+        </div>
+        <div>
+            <h4>自定义</h4>
+            <cat-vue-tag type="my-success" size="my" content="<span>content内容</span>"></cat-vue-tag>
+        </div>
+
+    </div>
+
+    <script>
+        let vue = new Vue({
+            el: "#app"
+        });
+    </script>
+    <h2>代码示例：</h2>
+    <pre style="padding: 8px;color: #1386e8;margin:8px 0px;border: 1px solid #ccc;">
+        <code style="font-size: 16px;font-weight: 500;font-family: initial;">
+&lt;at-vue-tag :type="my-success" :size="my" :content="&lt;span>content内容&lt;/span>">&lt;/cat-vue-tag>
+        </code>
+        </pre>
+
+
+
+
+        <h2>参数说明：</h2>
+
+    <div id="shuoming">
+        <cat-vue-table :header="header" :data="data" :tableclass="tableclass"></cat-vue-table>
+    </div>
+
+
+    <style>
+        .new-table {
+            border: none;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-weight: 100;
+            font-family: cursive;
+        }
+
+        .new-td,
+        .new-th {
+            border-bottom: 1px solid #02f156 !important;
+            padding: 12px 8px;
+        }
+    </style>
+
+
+    <script>
+
+        new Vue({
+            el: "#shuoming",
+            data: {
+                header: [{ key: "variable", name: "参数名" }, { key: "desc", name: "<div style=\"width:240px;\">说明</div>" }, { key: "other", name: "备注" }],
+                data: [
+
+                    {
+                        variable: "type",
+                        desc: `用来指定标签的类型，没有就默认为light-default类型。<br/>
+                        type可以选择如下类型:
+                        <br/>1)light : light-default light-success  light-info light-warning light-danger
+                        <br/>2)dark : dark-default dark-success  dark-info dark-warning dark-danger
+                        <br/>当传入的type值不是如上类型的时候，表示你自定义的样式，此时type的值为class的名字，最后会被加到标签的span上面。
+                        `,
+                        other: ""
+                    }, {
+                        variable: "size",
+                        desc: `选择标签大小。没有就默认medium。<br/>
+                       可以选择：big medium small mini。
+                       <br/>当传入的size值不是如上类型的时候，表示你自定义的样式，此时size的值为class的名字，最后会被加到标签的span上面。
+                    `,
+                        other: ""
+                    }, {
+                        variable: "content",
+                        desc: `
+                        标签内的内容，如果没有该值，则将&lt;cat-vue-tag&gt;直接包裹的文字作为展示，如果有则将其作为html字符串进行渲染。
+                    `,
+                        other: ""
+                    }
+
+                ],
+                tableclass: {
+                    table: "new-table",
+                    tr: "new-tr",
+                    td: "new-td",
+                    th: "new-th"
+                }
+            },
+            mounted: function () {
+                document.querySelector("#shuoming").querySelector("thead").querySelectorAll("th")[0].width = 120;
+                document.querySelector("#shuoming").querySelector("thead").querySelectorAll("th")[1].width = 500;
+
+            }
+        })
+
+    </script>
+
+
+    <footer style="height: 300px;">
+
+    </footer>
+
+</body>
+
+</html>

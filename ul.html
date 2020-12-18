@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat-vue-ul</title>
+
+    <script src="./static/js/vue.js"></script>
+    <script src="./static/js/cat-vue-ul.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-ul.css" />
+    <script src="./static/js/cat-vue-table.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-table.css" />
+    <link rel="stylesheet" href="./static/guide/css/cat-vue-page-main.css"/>
+
+    <style>
+        .nav-cat-vue-ul {
+            border: 1px solid #eee;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>cat-vue-ul</h1>
+    <h2>列表实例：</h2>
+    <div id="app" style="width:240px">
+        <cat-vue-ul :option="list" v-model="value"></cat-vue-ul>
+
+
+        <div>value:{{value}}</div>
+    </div>
+
+    <script>
+        let vue = new Vue({
+            el: "#app",
+            data: {
+                list: [{
+                    name: "列表1",
+                    value: "1",
+                    childrenClass: {
+                        ul: "nav-cat-vue-ul"
+                    },
+                    children: [{
+                        name: "列表1-1",
+                        value: "1-1"
+                    }, {
+                        name: "列表1-2",
+                        value: "1-2",
+                        children: [{
+                            name: "列表1-2-1",
+                            value: "1-2-1",
+                            children: [{
+                                name: "列表1-2-1-1",
+                                value: "1-2-1-1"
+                            }]
+                        }]
+                    }]
+                }, {
+                    name: "列表2",
+                    value: "2",
+                    children: [{
+                        name: "列表2-1",
+                        value: "2-1"
+                    }, {
+                        name: "列表2-2",
+                        value: "2-2",
+                        children: [{
+                            name: "列表2-2-1",
+                            value: "2-2-1",
+                            children: [{
+                                name: "列表2-2-1-1",
+                                value: "2-2-1-1"
+                            }]
+                        }]
+                    }]
+                }, {
+                    name: "列表3",
+                    value: "3"
+
+                }],
+                value: "1-2"
+            }
+
+            /*
+            
+            
+                  /*
+             
+              methods: {
+                judgeWhoBeChoose: function (array, newVal) {
+                    array.forEach((element) => {
+                        if (element.value == newVal) {
+                            element.beChoosed = true;
+                        } else {
+                            element.beChoosed = false;
+                        }
+                        if (Array.isArray(element.children) && element.children.length > 0) {
+                            this.judgeWhoBeChoose(element.children, newVal);
+                        }
+                    }, this);
+                    array.push({});
+                    array.pop();
+                },
+                changeValue: function (val) {
+                    let level = 0;
+                    this.list.forEach((element, index, a) => {
+                        if (element.value == val) {
+                            element.beChoosed = true;
+                            if (element.childrenClass) {
+                                if (element.childrenClass["ul"] == "cat-vue-ul") {
+                                    element.childrenClass = { "ul": "nav-cat-vue-ul" };
+                                } else {
+                                    element.childrenClass = { "ul": "cat-vue-ul" };
+                                }
+                            }
+                        } else {
+                            element.beChoosed = false;
+                        }
+                        if (Array.isArray(element.children) && element.children.length > 0) {
+                            this.judgeWhoBeChoose(element.children, val);
+                        }
+
+                    }, this);
+                    this.list.push({});
+                    this.list.pop();
+                }
+            }
+            * 
+            * 
+            * 
+            * 
+            * /
+            
+            */
+        });
+    </script>
+
+    <h2>代码示例：</h2>
+    <pre style="padding: 8px;color: #1386e8;margin:8px 0px;border: 1px solid #ccc;">
+        <code style="font-size: 16px;font-weight: 500;font-family: initial;">
+&lt;cat-vue-ul :option="list" v-model="value">&lt;/cat-vue-ul>
+.nav-cat-vue-ul {
+    border: 1px solid #eee;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+let vue = new Vue({
+    el: "#app",
+    data: {
+        list: [{
+            name: "列表1",
+            value: "1",
+            childrenClass: {
+                ul: "nav-cat-vue-ul"
+            },
+            children: [{
+                name: "列表1-1",
+                value: "1-1"
+            }, {
+                name: "列表1-2",
+                value: "1-2",
+                children: [{
+                    name: "列表1-2-1",
+                    value: "1-2-1",
+                    children: [{
+                        name: "列表1-2-1-1",
+                        value: "1-2-1-1"
+                    }]
+                }]
+            }]
+        }, {
+            name: "列表2",
+            value: "2",
+            children: [{
+                name: "列表2-1",
+                value: "2-1"
+            }, {
+                name: "列表2-2",
+                value: "2-2",
+                children: [{
+                    name: "列表2-2-1",
+                    value: "2-2-1",
+                    children: [{
+                        name: "列表2-2-1-1",
+                        value: "2-2-1-1"
+                    }]
+                }]
+            }]
+        }, {
+            name: "列表3",
+            value: "3"
+
+        }],
+        value: "1-2"
+    }
+});
+        </code>
+        </pre>
+
+
+
+
+    <h2>参数说明：</h2>
+
+    <div id="shuoming" style="width:880px">
+        <cat-vue-table :header="header" :data="data" :tableclass="tableclass"></cat-vue-table>
+    </div>
+
+
+    <style>
+        .new-table {
+            border: none;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-weight: 100;
+            font-family: cursive;
+        }
+
+        .new-td,
+        .new-th {
+            border-bottom: 1px solid #02f156 !important;
+            padding: 12px 8px;
+        }
+    </style>
+
+
+    <script>
+        new Vue({
+            el: "#shuoming",
+            data: {
+                header: [{
+                    key: "variable",
+                    name: "参数名"
+                }, {
+                    key: "desc",
+                    name: "<div style=\"width:240px;\">说明</div>"
+                }, {
+                    key: "other",
+                    name: "备注"
+                }],
+                data: [
+
+                    {
+                        variable: "option",
+                        desc: `
+                           列表渲染的对象数组，其中数组元素是对象，应该有name属性：表示展示，value属性表示具体的值。可以拥有beChoosed选项表示该选项是否被选中，若没有则ul后期会自动写入<br/>
+                           当li被点击选中后，绑定的变量会变成该对象中value中的值><br/>
+                           可以有children属性，children为对象数组形式，若想要重新渲染children，请提供childrenClass(子ul的ulclass)对象<br/>
+                           另外ul随着层级的深入，每深入一层则自动在span上增加16px的padding-left<br/>
+                        `,
+                        other: ""
+                    }, {
+                        variable: "ulclass",
+                        desc: `
+                        ul样式：<br/>
+                        &lt;ul class="ul"&gt;<br/>
+                        &nbsp;&nbsp;&lt;li class="li"&gt;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="span spanChoosed"&gt;<br/>
+                        &nbsp;&nbsp;&lt;/li&gt;<br/>
+                        &lt;/ul&gt;<br/>
+                    `,
+                        other: ""
+                    }, {
+                        variable: "v-model=?",
+                        desc: `
+                        绑定在ul上的值，当ul中的li被选中，则该值会被改变
+                        `,
+                        other: ""
+                    }
+
+                ],
+                tableclass: {
+                    table: "new-table",
+                    tr: "new-tr",
+                    td: "new-td",
+                    th: "new-th"
+                }
+            },
+            mounted: function () {
+                document.querySelector("#shuoming").querySelector("thead").querySelectorAll("th")[0].width =
+                    120;
+                document.querySelector("#shuoming").querySelector("thead").querySelectorAll("th")[1].width =
+                    500;
+
+            }
+        })
+    </script>
+
+
+    <footer style="height: 300px;">
+
+    </footer>
+
+</body>
+
+</html>

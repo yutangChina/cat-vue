@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat-vue-select</title>
+    <script src="./static/js/vue.js"></script>
+    <script src="./static/js/cat-vue-select.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-select.css" />
+
+
+    <script src="./static/js/cat-vue-table.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-table.css" />
+
+    <link rel="stylesheet" href="./static/guide/css/cat-vue-page-main.css"/>
+
+
+    <style>
+        h2 {
+            border-top: 3px solid #3d7e9a;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <div id="app">
+
+        <cat-vue-select :option="option" name="select"></cat-vue-select>
+
+    </div>
+
+    <script>
+        let vue = new Vue({
+            el:"#app",
+            data:{
+                option:[{
+                    value:1,
+                    name:"选择1"
+                },{
+                    value:2,
+                    name:"选择2"
+                },{
+                    value:3,
+                    name:"选择3"
+                },{
+                    value:4,
+                    name:"选择4"
+                }]
+            }
+        })
+    </script>
+
+</body>
+</html>

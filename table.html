@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat-vue-table</title>
+    <script src="./static/js/vue.js"></script>
+    <script src="./static/js/cat-vue-main.js"></script>
+    <script src="./static/js/cat-vue-table.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-table.css" />
+    <link rel="stylesheet" href="./static/guide/css/cat-vue-page-main.css"/>
+
+    <style>
+        .my-th {
+            width: 180px;
+            border: 1px solid #ebeef5;
+        }
+
+        h2 {
+            border-top: 3px solid #3d7e9a;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>cat-vue-table</h1>
+    <h2>表格实例：</h2>
+    <div id="app">
+        <cat-vue-table :header="header1" :data="data1"></cat-vue-table>
+        <cat-vue-table :header="header2" :data="data2" style="margin-top:18px;" :tableclass="class1"></cat-vue-table>
+    </div>
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                class1: {
+                    th: "my-th"
+                },
+                header1: ["商品名称", "商品英文", "商品品牌", "<div style='background:#eee'>价格</div>", "销量"],
+                data1: [["小米", "xiaomi", "xiaomi", "1119", "1"], ["小米", "xiaomi", "xiaomi", "1119", "1"], ["小米", "xiaomi", "xiaomi", "1119", "1"], ["小米", "xiaomi", "xiaomi", "1119", "1"]],
+                header2: [
+                    { key: "k1", name: "商品名称" },
+                    { key: "k2", name: "商品英文" },
+                    { key: "k3", name: "商品品牌" },
+                    { key: "k4", name: "<div style='color:red'>价格</div>" },
+                    {
+                        key: "k5", name: "销量",
+                        render: function (rowData, key) { return `<button @click="tableButton"> ${key} 为 ${rowData[key]}/99999</button>` }
+                    }
+                ],
+                data2: [{
+                    k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "1"
+                }, {
+                    k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "2"
+                }, {
+                    k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "3"
+                }, {
+                    k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "4"
+                }, {
+                    k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "5"
+                }]
+            },
+            methods:{
+                tableButton:function(){
+                    alert(this.class1.th);
+                }
+            }
+        })
+    </script>
+    <h2>代码示例：</h2>
+    <pre style="padding: 8px;color: #1386e8;margin:8px 0px;border: 1px solid #ccc;">
+    <code style="font-size: 16px;font-weight: 500;font-family: initial;">
+&lt;cat-vue-table :header="header2" :data="data2" :tableclass="class1" style="margin-top:18px;"&gt;&lt;/cat-vue-table&gt;
+new Vue({
+class1: {
+        th: "my-th"
+},
+el: "#app",
+data: {
+    header2: [
+        { key: "k1", name: "商品名称" },
+        { key: "k2", name: "商品英文" },
+        { key: "k3", name: "商品品牌" },
+        { key: "k4", name: "&lt;div style='color:red'&gt;价格&lt;/div&gt;" },
+        { key: "k5", name: "销量", render: function (rowData, key) { return key + '为' + rowData[key] + "/99999" } }
+    ],
+    data2: [{
+        k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "1"
+    }, {
+        k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "2"
+    }, {
+        k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "3"
+    }, {
+        k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "4"
+    }, {
+        k1: "小米", k2: "xiaomi", k3: "xiaomi", k4: "1119", k5: "5"
+    }]
+}
+});
+    </code>
+    </pre>
+    <h2>参数说明：</h2>
+
+    <div id="shuoming">
+        <cat-vue-table :header="header" :data="data" :tableclass="tableclass"></cat-vue-table>
+    </div>
+
+
+    <style>
+        .new-table {
+            border: none;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-weight: 100;
+            font-family: cursive;
+        }
+
+        .new-td,
+        .new-th {
+            border-bottom: 1px solid #02f156 !important;
+            padding: 12px 8px;
+        }
+    </style>
+
+
+    <script>
+
+        new Vue({
+            el: "#shuoming",
+            data: {
+                header: [{ key: "variable", name: "参数名" }, { key: "desc", name: "<div style=\"width:240px;\">说明</div>" }, { key: "other", name: "备注" }],
+                data: [
+
+                    {
+                        variable: "header",
+                        desc: `此参数用来确定表格的头。<br/>1.当为普通字符串数组的时候，<br/>
+                    例如：<br/>hedaer:[\"标题1\"，\"标题2\"]，<br/>那么
+                    <br/>data必须为:
+                    [["数据1"，"数据2"],["数据1"，"数据2"]]这样的形式;<br/>
+                    2.当header为对象数组形式，即数据从后台传来的时候，header数组中的每个数组元素对象可以有如下属性：
+                    <br/>(1)key(必须，字符串)：用于data中数据的渲染。（即data数组的每个数组元素对象中的key-value中的key值）
+                    <br/>(2)name(必须，字符串)：表格头名字，可以是html字符串
+                    <br/>(3)render(可选，方法)：当该列数据需要处理后在渲染时，定义该属性方法，则每次渲染该列数据的时候都会调用该方法，方法有两个参数：第一个表示整个行的数据，第二个表示该列的key。
+                    `,
+                        other: ""
+                    }, {
+                        variable: "data",
+                        desc: `此参数用来渲染表格的数据列。两种形式：<br/>
+                       (1)当header为字符串数组时候，data为一个二维基础数据数组。<br/>
+                       (2)当header为对象数组时候，data为一个对象数组。
+                    `,
+                        other: ""
+                    }, {
+                        variable: "tableclass",
+                        desc: `此参数为对象，用来改变表格的样式。该对象内可以有如下属性(属性的值为class字符串)：<br/>
+                    （1）table: 用来改变table上的class。<br/>
+                    （2）thead: 用来改变thead上的class。<br/>
+                    （3）tbody: 用来改变tbody上的class。<br/>
+                    （4）tr: 用来改变tr上的class。<br/>
+                    （5）th: 用来改变th上的class。<br/>
+                    （6）td: 用来改变td上的class。<br/>
+                    
+                    `,
+                        other: ""
+                    }
+
+                ],
+                tableclass: {
+                    table: "new-table",
+                    tr: "new-tr",
+                    td: "new-td",
+                    th: "new-th"
+                }
+            },
+            mounted: function () {
+                document.querySelector("#shuoming").querySelector("thead").querySelectorAll("th")[0].width = 120;
+                document.querySelector("#shuoming").querySelector("thead").querySelectorAll("th")[1].width = 500;
+
+            }
+        })
+
+    </script>
+
+
+    <footer style="height: 300px;">
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat-vue-checkbox</title>
+    <script src="./static/js/vue.js"></script>
+    <script src="./static/js/cat-vue-checkbox.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-checkbox.css" />
+
+
+    <script src="./static/js/cat-vue-table.js"></script>
+    <link rel="stylesheet" href="./static/css/cat-vue-table.css" />
+
+    <link rel="stylesheet" href="./static/guide/css/cat-vue-page-main.css"/>
+
+
+    <style>
+        h2 {
+            border-top: 3px solid #3d7e9a;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>cat-vue-checkbox</h1>
+    <h2>多选列表组实例：</h2>
+    <div id="app">
+        <cat-vue-checkbox :option="lits"  name="catCheckbox" v-model="value"></cat-vue-checkbox>
+        <div>&nbsp;&nbsp;&nbsp;值：<span v-for="item in value">{{item}} </span></div>
+    
+    </div>
+
+
+    <script>
+
+        let vue = new Vue({
+            el:"#app",
+            data: {
+                lits: [{
+                    name: "多选1",
+                    value: 1,
+                    disabled:true
+                }, {
+                    name: "多选2",
+                    value: 2,
+                    select: true
+                }, {
+                    name: "多选3",
+                    value: 3
+                }, {
+                    name: "多选4",
+                    value: 4
+                }, {
+                    name: "多选5",
+                    value: 5
+                }, {
+                    name: "多选6",
+                    value: 6,
+                    disabled:true
+                }],
+                value: [1,2,3]
+            }
+        })
+    </script>
+ <h2>代码示例：</h2>
+ <pre style="padding: 8px;color: #1386e8;margin:8px 0px;border: 1px solid #ccc;">
+<code style="font-size: 16px;font-weight: 500;font-family: initial;">
+&lt;cat-vue-checkbox :option="lits"  name="catCheckbox" v-model="value">&lt;/cat-vue-checkbox>
+let vue = new Vue({
+    el:"#app",
+    data: {
+        lits: [{
+            name: "多选1",
+            value: 1,
+            disabled:true
+        }, {
+            name: "多选2",
+            value: 2,
+            select: true
+        }, {
+            name: "多选3",
+            value: 3
+        }, {
+            name: "多选4",
+            value: 4
+        }, {
+            name: "多选5",
+            value: 5
+        }, {
+            name: "多选6",
+            value: 6,
+            disabled:true
+        }],
+        value: [1,2,3]
+    }
+})
+</code>
+</pre>
+
+
+
+ <h2>参数说明：</h2>
+
+ <div id="shuoming">
+     <cat-vue-table :header="header" :data="data" :tableclass="tableclass"></cat-vue-table>
+ </div>
+
+
+ <style>
+     .new-table {
+         border: none;
+         border-collapse: collapse;
+         font-size: 16px;
+         font-weight: 100;
+         font-family: cursive;
+     }
+
+     .new-td,
+     .new-th {
+         border-bottom: 1px solid #02f156 !important;
+         padding: 12px 8px;
+     }
+ </style>
+
+
+ <script>
+
+     new Vue({
+         el: "#shuoming",
+         data: {
+             header: [{ key: "variable", name: "参数名" }, { key: "desc", name: "<div style=\"width:240px;\">说明</div>" }, { key: "other", name: "备注" }],
+             data: [
+                 {
+                     variable: "option",
+                     desc: `
+                     多选组列表，对象数组形式。其中每个对象应该有：<br/>
+                     name:显示名<br/>
+                     value:实际值<br/>
+                     select:是否该选项被选中，可以没有。当v-model绑定的变量值不是数组或数组为空的时候该值启效果;<br/>
+                     disabled:有该属性且属性值为true，则该选项禁用；
+                 `,
+                     other: ""
+                 }, {
+                     variable: "name",
+                     desc: `
+                     form表单中需要的name，不提供则随机给出一个。
+             `,
+                     other: ""
+                 }, {
+                     variable: "checkboxclass",
+                     desc: `
+                      对象模式。通过该值可以修改标签渲染样式<br/>
+                      该对象可以有以下属性（属性名后面的是默认值）：<br/>
+                      checkboxgroup: "cat-vue-checkbox-group"<br/>
+                      checkboxItem: "cat-vue-checkbox-item"<br/>
+                      inputContiner: "cat-vue-checkbox-inputcontiner"<br/>
+                      input: "cat-vue-checkbox-input"<br/>
+                      label: "cat-vue-checkbox-label"<br/>
+                      labelChecked: "cat-vue-checkbox-checked"(被选中后需要改变随后的label样式)<br/>
+                      labelDisabled:"cat-vue-checkbox-labelDisabled"（禁用选项后的label样式）<br/>
+                      inputDisabled:"cat-vue-checkbox-inputDisabled"（禁用选项后的input样式，包括该选项被选中但是被禁用）<br/>
+                      标签的层次结构：<br/>
+                         &lt;div checkboxgroup><br/>
+                         &nbsp;&nbsp;&lt;div checkboxItem><br/>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;span inputContiner> <br/>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input input inputDisabled><br/>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;/span><br/>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;label label labelChecked labelDisabled></label><br/>
+                         &nbsp;&nbsp;&lt;/div><br/>
+                         &lt;/div><br/>
+             `,
+                     other: ""
+                 }, 
+                 {
+                     variable: "v-model=?",
+                     desc: `
+                     父组件获取checkbox选择值的变量，必须定义。可以用来给checkbox进行初始化，需要是数组形式。
+             `,
+                     other: ""
+                 }
+
+             ],
+             tableclass: {
+                 table: "new-table",
+                 tr: "new-tr",
+                 td: "new-td",
+                 th: "new-th"
+             }
+         },
+         mounted: function () {
+             document.querySelector("#shuoming").querySelector("thead").querySelectorAll("th")[0].width = 120;
+             document.querySelector("#shuoming").querySelector("thead").querySelectorAll("th")[1].width = 500;
+
+         }
+     })
+
+ </script>
+
+
+ <footer style="height: 300px;">
+
+ </footer>
+
+</body>
+
+</html>
